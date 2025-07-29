@@ -1,0 +1,569 @@
+/* Global CSS */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Inter:400");
+
+:root {
+  --black: #000000;
+  --mercury: #e7e7e7;
+  --tamarillo: #9a182d;
+  --white: #ffffff;
+  --tamarillo-99: #9a182d99;
+  --white-99: #ffffff99;
+  --black-0d: #0000000d;
+  --eeeeee: #eeeeee;
+  --black-50: rgba(0, 0, 0, 0.5);
+
+  --font-size-m: 20px;
+  --font-size-s: 16px;
+
+  --font-family-inter: "Inter", Helvetica;
+}
+
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.hidden,
+.hidden * {
+  pointer-events: none;
+  visibility: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
+  margin: 0;
+  background: var(--mercury);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.internormaltamarillo20px {
+  color: var(--tamarillo);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.internormalwhite20px {
+  color: var(--white);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Main Structure */
+.main.screen {
+  background-color: var(--mercury);
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Welcome Header */
+.welcome {
+  align-items: center;
+  background-color: var(--white);
+  box-shadow: 0px 4px 4px var(--black-0d);
+  display: flex;
+  gap: 10px;
+  left: 0;
+  padding: 12px 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.welcomeitem {
+  align-items: center;
+  background-color: var(--tamarillo);
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 11px 7px;
+  position: relative;
+  width: 32px;
+}
+
+.wsf,
+.wef {
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  margin: -11px -7px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 32px;
+}
+
+.wsf:hover,
+.wef:hover {
+  background-color: var(--black);
+}
+
+.wsi {
+  height: 10px;
+  margin-left: 7px;
+  margin-top: 11px;
+  width: 18px;
+}
+
+.wei {
+  height: 15.52px;
+  margin-left: 9.4px;
+  margin-top: 8px;
+  width: 13.58px;
+}
+
+.wt {
+  flex: 1;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+}
+
+/* Chat Area */
+.responsive {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced from 20px */
+  height: calc(100vh - 122px);
+  overflow-y: scroll;
+  position: fixed;
+  top: 56px;
+  padding: 15px; /* Reduced from 20px */
+  box-sizing: border-box;
+}
+
+.responsive::-webkit-scrollbar {
+  display: none;
+  width: 0;
+}
+
+/* Message Layout - Updated to match the screenshot with reduced spacing */
+.ural {
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 10px;
+  height: auto;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  align-self: flex-start;
+  box-sizing: border-box;
+  margin: 0 0 8px 0; /* Reduced from 15px */
+}
+
+.urtal {
+  align-items: flex-start;
+  background-color: #000000;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px var(--black-0d);
+  display: inline-flex;
+  flex: 0 1 auto;
+  gap: 10px;
+  max-width: calc(100% - 54px);
+  min-width: 0;
+  overflow: hidden;
+  padding: 15px; /* Reduced from 20px */
+  position: relative;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.urt {
+  letter-spacing: 0;
+  line-height: 1.3; /* Reduced from 1.5 */
+  margin-top: -1px;
+  position: relative;
+  white-space: pre-wrap;
+  width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+  max-width: 100%;
+  display: inline-block;
+  color: var(--white);
+}
+
+.urt p {
+  margin-bottom: 6px; /* Reduced from 10px */
+}
+
+.urt ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.urt ul li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 3px; /* Reduced from 5px */
+}
+
+.urt ul li:before {
+  content: "-";
+  position: absolute;
+  left: 0;
+}
+
+.urpal {
+  align-items: center;
+  background-color: var(--tamarillo);
+  border-radius: 22px;
+  display: flex;
+  flex: 0 0 44px;
+  height: 44px;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 44px;
+}
+
+.urpf {
+  border-radius: 22px;
+  cursor: pointer;
+  height: 44px;
+  width: 44px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+  max-height: 44px;
+  max-width: 44px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.urpi {
+  height: 21px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 19px;
+  pointer-events: none;
+}
+
+/* Quick reply buttons */
+.quick-reply-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 8px; /* Reduced from 10px */
+  gap: 8px; /* Reduced from 10px */
+  flex-wrap: wrap;
+}
+
+.quick-reply-btn {
+  background-color: var(--tamarillo);
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Reduced from 10px 20px */
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-family-inter);
+  font-size: 14px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.quick-reply-btn:hover {
+  background-color: #7a1323;
+}
+
+/* User message - Updated to match the screenshot with reduced spacing */
+.aral {
+  align-items: flex-end;
+  display: inline-flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  margin: 0 0 8px 0; /* Reduced from 15px */
+}
+
+.arpal {
+  align-items: center;
+  background-color: #000000;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px var(--black-0d);
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  overflow: hidden;
+  padding: 15px; /* Reduced from 20px */
+  position: relative;
+  max-width: calc(100% - 64px);
+  word-wrap: break-word;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.arpal .arpt {
+  align-self: center;
+  flex: 1;
+  letter-spacing: 0;
+  line-height: 1.3; /* Reduced from 1.5 */
+  margin-top: -1px;
+  position: relative;
+  white-space: pre-wrap;
+  width: 100%;
+  word-break: normal;
+  overflow-wrap: break-word;
+  hyphens: none;
+  display: inline-block;
+  color: var(--white);
+}
+
+/* Input area */
+.message {
+  align-items: flex-end;
+  background-color: var(--white);
+  border-radius: 16px;
+  bottom: 10px;
+  box-shadow: 0px 4px 4px var(--black-0d);
+  display: flex;
+  gap: 10px;
+  max-height: 224px;
+  overflow: hidden;
+  padding: 12px 10px;
+  position: fixed;
+  width: calc(100% - 20px);
+  left: 10px;
+  transition: height 0.2s ease;
+  z-index: 998;
+}
+
+.mt {
+  align-self: stretch;
+  background-color: transparent;
+  border: 0;
+  flex: 1;
+  flex-grow: 1;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin-top: -1px;
+  max-height: 152px;
+  height: 32px;
+  padding: 4px 0;
+  position: relative;
+  resize: none;
+  overflow-y: auto;
+  word-wrap: break-word;
+  word-break: normal;
+  white-space: pre-wrap;
+  hyphens: none;
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-m);
+  color: var(--tamarillo);
+}
+
+.mt:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.mt::placeholder {
+  color: var(--tamarillo-99);
+}
+
+.mt::-webkit-scrollbar {
+  display: none;
+}
+
+.muual {
+  align-items: center;
+  background-color: var(--tamarillo);
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  height: 32px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 11px 7px;
+  position: relative;
+  width: 32px;
+}
+
+.muuf {
+  border-radius: 16px;
+  cursor: pointer;
+  display: flex;
+  height: 32px;
+  margin-bottom: -11px;
+  margin-left: -7px;
+  margin-right: -7px;
+  margin-top: -11px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease;
+  width: 32px;
+}
+
+.muuf:hover {
+  background-color: var(--black);
+}
+
+.muua {
+  height: 17.32px;
+  margin-left: 9px;
+  margin-top: 7px;
+  width: 14.79px;
+}
+
+/* Loading indicator */
+.loading {
+  display: none;
+  text-align: center;
+  padding: 8px; /* Reduced from 10px */
+}
+
+.typing-indicator {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--tamarillo);
+  border-radius: 16px;
+}
+
+.typing-indicator span {
+  height: 10px;
+  width: 10px;
+  float: left;
+  margin: 0 1px;
+  background-color: var(--white);
+  display: block;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.typing-indicator span:nth-of-type(1) {
+  animation: 1s blink infinite 0.3333s;
+}
+
+.typing-indicator span:nth-of-type(2) {
+  animation: 1s blink infinite 0.6666s;
+}
+
+.typing-indicator span:nth-of-type(3) {
+  animation: 1s blink infinite 0.9999s;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+/* API Key Modal */
+.api-key-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.api-key-content {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0px 4px 4px var(--black-0d);
+}
+
+.api-key-form {
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1279px) {
+  .responsive {
+    left: 0;
+    width: 100%;
+    padding: 15px; /* Reduced from 20px */
+    box-sizing: border-box;
+  }
+
+  .urtal,
+  .arpal {
+    max-width: calc(100% - 54px);
+  }
+
+  .ural {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .message {
+    width: calc(100% - 20px);
+    left: 10px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .responsive {
+    left: 300px;
+    width: calc(100% - 600px);
+    padding: 15px; /* Reduced from 20px */
+    box-sizing: border-box;
+  }
+
+  .urtal,
+  .arpal {
+    max-width: calc(100% - 54px);
+  }
+
+  .ural {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .message {
+    width: calc(100% - 600px);
+    left: 300px;
+  }
+}

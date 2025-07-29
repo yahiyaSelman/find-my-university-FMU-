@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <style>
+      /* Background Styling */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #e7e7e7;
+        background-image: url("/static/mdv.svg"); /* ✅ Background Image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: "Arial", sans-serif;
+      }
+
+      /* Logo (Lottie Animation) Size */
+      #logo {
+        width: 300px;
+        height: 300px;
+      }
+
+      /* Input Styling (If you add later) */
+      input {
+        padding: 12px 20px;
+        margin: 10px 0;
+        font-size: 16px;
+        border: 2px solid #9a182d;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #7a1323;
+        box-shadow: 0 0 8px rgba(154, 24, 45, 0.5);
+      }
+
+      /* Button Styling (If you add later) */
+      button {
+        padding: 12px 25px;
+        font-size: 16px;
+        background-color: #9a182d;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #7a1323;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo"></div>
+
+    <script>
+      const animation = lottie.loadAnimation({
+        container: document.getElementById("logo"),
+        renderer: "svg",
+        loop: true,
+        autoplay: true,
+        path: "/static/logo.json",
+      });
+
+      setTimeout(() => {
+        window.location.href = "/student";
+      }, 4000); // 4 seconds splash screen
+    </script>
+  </body>
+</html>

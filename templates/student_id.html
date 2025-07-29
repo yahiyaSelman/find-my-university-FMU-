@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Login</title>
+    <style>
+      /* Background Styling */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background-color: #e7e7e7;
+        background-image: url("/static/mdv.svg"); /* Your background image */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+
+      /* Container Styling */
+      .container {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 40px 30px;
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 400px;
+        width: 90%;
+      }
+
+      .container h2 {
+        color: #9a182d;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      /* Input Styling */
+      input {
+        padding: 12px 20px;
+        margin: 10px 0;
+        width: 80%;
+        font-size: 16px;
+        border: 2px solid #9a182d;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s ease;
+      }
+
+      input:focus {
+        border-color: #7a1323;
+        box-shadow: 0 0 8px rgba(154, 24, 45, 0.5);
+      }
+
+      /* Button Styling */
+      button {
+        padding: 12px 30px;
+        margin-top: 15px;
+        font-size: 16px;
+        background-color: #9a182d;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      button:hover {
+        background-color: #7a1323;
+        transform: translateY(-2px);
+      }
+
+      /* Error Message Styling */
+      .error {
+        color: red;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Enter Your Name</h2>
+      <input type="text" id="student_name" placeholder="Enter Your Name" />
+      <br />
+      <button onclick="submitName()">Submit</button>
+      <p class="error" id="error-msg"></p>
+    </div>
+
+    <script>
+      function submitName() {
+        const studentName = document
+          .getElementById("student_name")
+          .value.trim();
+        fetch("/enter-name", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name: studentName }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              window.location.href = "/chat";
+            } else {
+              document.getElementById("error-msg").textContent =
+                data.error || "Please enter your name.";
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
